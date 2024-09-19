@@ -1,0 +1,216 @@
+.payment_modal {
+    display: block;
+
+    position: fixed;
+    top: calc(50% - 220px);
+    right: calc(50% - 225px);
+
+    width: 450px;
+    height: 440px;
+    padding: 30px;
+    padding-top: 50px;
+
+    background-color: var(--background);
+    border: 3px solid var(--green);
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: flex;
+
+    z-index: 1000;
+}
+.payment_modal.none {
+    display: none;
+}
+
+.payment_slide {
+    min-width: 100%;
+    min-height: 100%;
+
+    transition: all 0.3s ease;
+}
+.payment_slide.first {
+    transform: translateX(0);
+}
+.payment_slide.first.hidden {
+    transform: translateX(-120%);
+}
+.payment_slide.second.hidden {
+    transform: translateX(20%);
+}
+.payment_slide.second {
+    transform: translateX(-100%);
+}
+
+.payment_form {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+    accent-color: green;
+}
+.payment_close_btn {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+
+    width: 40px;
+    height: 40px;
+    background-color: var(--background);
+
+    img {
+        width: 50%;
+    }
+}
+.payment_form_item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.payment_form_item.check {
+    flex-direction: row;
+    align-items: center;
+    /* gap: 10px; */
+}
+.inputs_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment_input {
+    width: 100%;
+    /* height: 60px; */
+    padding: 20px;
+
+    font-size: 18px;
+    border: 2px solid var(--grey-border);
+    border-radius: 15px;
+}
+.payment_input.date_1, .payment_input.date_2 {
+    width: 30%;
+}
+.payment_input.check {
+    width: 30px;
+    height: 30px;
+}
+.label_for_check {
+    cursor: pointer;
+}
+.payment_input::placeholder {
+    color: var(--input-inner);
+}
+.payment_input:focus {
+    border-color: var(--green);
+}
+
+.payment_btn {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--green);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+.payment_btn:hover {
+    box-shadow: 0px 0px 15px 0px #fff inset;
+}
+.payment_btn.disabled {
+    background-color: #fff;
+    color: var(--grey_text);
+    border: 2px solid var(--grey-border);
+    cursor: not-allowed;
+}
+.payment_btn.send {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.slide_inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.slide_text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.payment_title {
+    font-size: 26px;
+    color: var(--main_text);
+    text-align: center;
+    line-height: 1.2;
+}
+.payment_phone {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.code_form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 0.5fr;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+.code_input {
+    width: 100%;
+    height: 120px;
+    padding-left: 28px;
+
+    font-size: 50px;
+    font-weight: 600;
+    
+    border: 2px solid var(--grey-border);
+    border-radius: 20px;
+}
+.code_input:focus {
+    border-color: var(--green);
+}
+
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    .payment_modal {
+        top: calc(50% - 220px);
+        right: calc(50% - 145px);
+    
+        width: 290px;
+        height: 440px;
+        padding: 20px;
+        padding-top: 40px;
+    
+        background-color: var(--background);
+        border: 3px solid var(--green);
+        border-radius: 20px;
+    
+        z-index: 1000;
+    }
+    .payment_input.date_1, .payment_input.date_2 {
+        width: 50%;
+    }
+    .payment_close_btn {
+        top: -35px;
+        right: -15px;
+    }
+
+    .code_input {
+        height: 80px;
+        padding-left: 13px;
+        font-size: 40px;
+        border-radius: 10px;
+    }
+}

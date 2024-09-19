@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="libraries/swiper/swiper-bundle.min.css"/>
+    <!-- Datepicker JS (Calendar) -->
+    <link rel="stylesheet" href="libraries/datepicker/datepicker.minimal.css">
+    <!-- CSS Normolise -->
+    <link rel="stylesheet" href="styles/total-clear.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="styles/general.css">
+    <!-- Header -->
+    <link rel="stylesheet" href="styles/header.css">
+    <!-- Footer -->
+    <link rel="stylesheet" href="styles/footer.css">
+    
+    <!-- Фильтры -->
+    <link rel="stylesheet" href="styles/main-page/filter-dropdown.css">
+    <!-- Dropdowns -->
+    <link rel="stylesheet" href="styles/dropdowns.css">
+    <!-- Главняа страница (поле карточек) -->
+    <link rel="stylesheet" href="styles/main-page/main.css">
+    <!-- Офферы -->
+    <link rel="stylesheet" href="styles/main-page/offers.css">
+    <!-- Типы великов (слайдер + всплявашки) -->
+    <link rel="stylesheet" href="styles/main-page/bike-types.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header">
+                <nav id="nav">
+                    <a href="/"><img id="header-logo" src="images/LogoGS.png" alt="Logo"></a>
+                    <a id="header-tel" href="tel:+998335005050">+998(33)-500-50-50</a>
+                    <a href="registration.html" id="login">Войти</a>
+                    <ul id="nav-menu">
+                        <li class="nav-link active"><a href="/">Аренда</a></li>
+                        <li class="nav-link"><a href="delivery.html">Доставка</a></li>
+                        <li class="nav-link"><a href="places.html">Где кататься</a></li>
+                        <li class="nav-link"><a href="contacts.html">Контакты</a></li>
+                        <li class="nav-link"><a href="about.html">О нас</a></li>
+                        <li class="nav-link tel hidden"><a href="tel:+998335005050">+998(33)-500-50-50</a></li>
+                        <li class="nav-link btn hidden"><a href="registration.html">Войти</a></li>
+                    </ul>
+                    <div id="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="margin_top">
+        <div class="container">
+            <div class="wrapper nopading">
+                <div class="banner">
+                    <h1 class="main-title">Аренда велосипедов c доставкой</h1>
+                    <div class="offers">
+                        <div class="offer">
+                            <div class="offer-inner">
+                                <img src="images/bonuses/helmet.png" alt="helmet">
+                                <p class="offer-text">Шлем<br><span>Бесплатно</span></p>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="offer-inner">
+                                <img src="images/bonuses/flashlight.png" alt="flashlight">
+                                <p class="offer-text">Фонарик<br><span>Бесплатно</span></p>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="offer-inner">
+                                <img src="images/bonuses/lock.png" alt="lock">
+                                <p class="offer-text">Замок<br><span>Бесплатно</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-inputs">
+                    <div class="filters response">
+                        <div class="filters__item">
+                            <p>Тип аренды</p>
+                            <div id="time-toggle">
+                                <p class="toggle-text active">По часам</p>
+                                <p class="toggle-text">По дням</p>
+                                <div id="time-toggle-selection"></div>
+                            </div>
+                        </div>
+                        <div class="filters__item">
+                            <p>Дата и время начала</p>
+                            <input type="text" class="time-input" name="input-time-start" id="input-time-start" placeholder="Дата начала">
+                        </div>
+                        <div class="filters__item">
+                            <p>Дата и время конца</p>
+                            <input type="text" class="time-input" name="input-time-end" id="input-time-end" placeholder="Дата конца">
+                        </div>
+                        <div class="filters__item">
+                            <p>Доставка</p>
+                            <div class="dropdown">
+                                <input type="text" class="input-params" name="input-delivery" id="input-delivery" placeholder="По адресу" readonly>
+                                <ul class="option">
+                                    <li class="option__param time-param">В пункт выдачи</li>
+                                    <li class="option__param time-param">По адресу</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="connector"></div>
+            <div class="wrapper">
+                <div class="slider_nav_buttons">
+                    <p>Тип велосипеда</p>
+                    <button class="slider_btn prev-btn"><</button>
+                    <button class="slider_btn next-btn">></button>
+                </div>
+                <div class="swiper bikes_types">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bike_type" data-type="family">
+                            <img class="type__photo big" src="images/types/family_bike.png" alt="bike">
+                            <h3>Семейные</h3>
+                            <div class="type__info">
+                                <p>30 тыс</p>
+                                <button class="type_btn question">?</button>
+                                <button class="type_btn plus">+</button>
+                            </div>
+                            <input class="type_checkbox" type="checkbox" hidden>
+                            <div class="tooltip none">Легкие, надежные и легко управляются. Катайтесь вместе с друзьями!</div>
+                        </div>
+                        <div class="swiper-slide bike_type" data-type="sport">
+                            <img class="type__photo" src="images/types/sport_bike.png" alt="bike">
+                            <h3>Спортивные</h3>
+                            <div class="type__info">
+                                <p>30 тыс</p>
+                                <button class="type_btn question">?</button>
+                                <button class="type_btn plus">+</button>
+                            </div>
+                            <input class="type_checkbox" type="checkbox" hidden>
+                            <div class="tooltip none">Легкие, надежные и легко управляются. Вобще четкий ма!</div>
+                        </div>
+                        <div class="swiper-slide bike_type" data-type="women">
+                            <img class="type__photo" src="images/types/women_bike.png" alt="bike">
+                            <h3>Дамские</h3>
+                            <div class="type__info">
+                                <p>30 тыс</p>
+                                <button class="type_btn question">?</button>
+                                <button class="type_btn plus">+</button>
+                            </div>
+                            <input class="type_checkbox" type="checkbox" hidden>
+                            <div class="tooltip none">Легкие, надежные и легко управляются. Удобство прежде всего!</div>
+                        </div>
+                        <div class="swiper-slide bike_type" data-type="children">
+                            <img class="type__photo" src="images/types/children_bike.png" alt="bike">
+                            <h3>Детские</h3>
+                            <div class="type__info">
+                                <p>30 тыс</p>
+                                <button class="type_btn question">?</button>
+                                <button class="type_btn plus">+</button>
+                            </div>
+                            <input class="type_checkbox" type="checkbox" hidden>
+                            <div class="tooltip none">Легкие, надежные и легко управляются. Для юных велосипедистов!</div>
+                        </div>
+                        <div class="swiper-slide bike_type" data-type="mount">
+                            <img class="type__photo" src="images/types/mount_bike.png" alt="bike">
+                            <h3>Горные</h3>
+                            <div class="type__info">
+                                <p>30 тыс</p>
+                                <button class="type_btn question">?</button>
+                                <button class="type_btn plus">+</button>
+                            </div>
+                            <input class="type_checkbox" type="checkbox" hidden>
+                            <div class="tooltip none">Легкие, надежные и легко управляются. Покоряй новые вершины!</div>
+                        </div>
+                    </div>
+                </div>
+                <form method="post" action="/search-bikes" id="find_form">
+                    <input type="hidden" name="type_1" class="search_input">
+                    <input type="hidden" name="type_2" class="search_input">
+                    <input type="hidden" name="type_3" class="search_input">
+                    <input type="hidden" name="type_4" class="search_input">
+                    <input type="hidden" name="type_5" class="search_input">
+                    <input type="hidden" name="type_of_price" id="type_of_price" value="По часам">
+                    <button type="submit" class="action-button disabled" id="search-btn">Найти</button>
+                </form>
+                <!-- <button class="action-button disabled" id="search-btn">Найти</button> -->
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="connector"></div>
+            <div class="wrapper">
+                <div class="filters">
+                    <div class="filters__item">
+                        <p>Бренд</p>
+                        <div class="dropdown">
+                            <input type="text" class="input-params" name="input-brand" id="input-brand" placeholder="Все" readonly>
+                            <ul class="option">
+                                <li class="option__param">Все</li>
+                                <li class="option__param">Yeti</li>
+                                <li class="option__param">Trek</li>
+                                <li class="option__param">Santana</li>
+                                <li class="option__param">Cannondale</li>
+                                <li class="option__param">Goodway</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filters__item">
+                        <p>Диаметр колеса</p>
+                        <div class="dropdown">
+                            <input type="text" class="input-params" name="input-diametr" id="input-diametr" placeholder="Все" readonly>
+                            <ul class="option">
+                                <li class="option__param">Все</li>
+                                <li class="option__param">18''</li>
+                                <li class="option__param">19''</li>
+                                <li class="option__param">20''</li>
+                                <li class="option__param">21''</li>
+                                <li class="option__param">22''</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filters__item">
+                        <p>Сортировать по цене</p>
+                        <div class="dropdown">
+                            <input type="text" class="input-params" name="input-sortprice" id="input-sortprice" placeholder="Все" readonly>
+                            <ul class="option">
+                                <li class="option__param">Подешевле</li>
+                                <li class="option__param">Подороже</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="reload-button">
+                        Сбросить фильтры
+                        <img src="images/icons/reload_icon.svg" alt="reload">
+                    </button>
+                </div>
+                <div class="cards">
+                    <div class="bycicle" data-diametr="20''" data-brand="Trek" data-price="40" data-card-type="family">
+                        <div class="bycicle__info">
+                            <p class="bycicle__info_diametr">20''</p>
+                            <p class="bycicle__info_brand">Trek</p>
+                        </div>
+                        <div class="bycicle__photo">
+                            <img src="images/bikes/children/children_01.png" alt="family_bike">
+                        </div>
+                        <h3 class="bycicle__title">Велосипед Trek</h3>
+                        <p class="bycicle__price">Цена: 40 тыс/час</p>
+                        <button class="bycicle__to-cart">Выбрать</button>
+                    </div>
+                    <div class="bycicle" data-diametr="20''" data-brand="Trek" data-price="30" data-card-type="family">
+                        <div class="bycicle__info">
+                            <p class="bycicle__info_diametr">20''</p>
+                            <p class="bycicle__info_brand">Trek</p>
+                        </div>
+                        <div class="bycicle__photo">
+                            <img src="images/bikes/mount/mount_01.png" alt="family_bike">
+                        </div>
+                        <h3 class="bycicle__title">Велосипед Trek</h3>
+                        <p class="bycicle__price">Цена: 30 тыс/час</p>
+                        <button class="bycicle__to-cart">Выбрать</button>
+                    </div>
+                    <div class="bycicle" data-diametr="20''" data-brand="Trek" data-price="30" data-card-type="family">
+                        <div class="bycicle__info">
+                            <p class="bycicle__info_diametr">20''</p>
+                            <p class="bycicle__info_brand">Trek</p>
+                        </div>
+                        <div class="bycicle__photo">
+                            <img src="images/bikes/mount/mount_01.png" alt="family_bike">
+                        </div>
+                        <h3 class="bycicle__title">Велосипед Trek</h3>
+                        <p class="bycicle__price">Цена: 30 тыс/час</p>
+                        <button class="bycicle__to-cart">Выбрать</button>
+                    </div>
+                    <div class="bycicle" data-diametr="20''" data-brand="Trek" data-price="30" data-card-type="family">
+                        <div class="bycicle__info">
+                            <p class="bycicle__info_diametr">20''</p>
+                            <p class="bycicle__info_brand">Trek</p>
+                        </div>
+                        <div class="bycicle__photo">
+                            <img src="images/bikes/mount/mount_01.png" alt="family_bike">
+                        </div>
+                        <h3 class="bycicle__title">Велосипед Trek</h3>
+                        <p class="bycicle__price">Цена: 30 тыс/час</p>
+                        <button class="bycicle__to-cart">Выбрать</button>
+                    </div>
+                </div>
+                <div class="not-found none">
+                    <img src="images/icons/not-found-icon.png" alt="not-found">
+                    <h3>Ничего не найдено.<br>Попробуйте изменить условия поиска.</h3>
+                </div>
+                <button class="action-button disabled" id="arrange-btn">Оформить</button>
+                <article class="arrange-message">
+                    <div class="triangle"></div>
+                    * Укажите дату и время начала и конца срока аренды!
+                    <br>
+                    * Также выберите хотя бы один велосипед!
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <img class="footer-logo" src="images/open-bike-logoGS.png" alt="LOGO">
+                <div class="contacts">
+                    <h3>Контакты:</h3>
+                    <ul>
+                        <li>100154,<br>Узбекстан, г.Ташкент</li>
+                        <li><a href="mailto:info@open-bike.uz">info@open-bike.uz</a></li>
+                        <li><a href="tel:+998335005050">+ 998(33)-500-50-50</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© OpenBike 2024</p>
+                <ul class="socials">
+                    <li><a href="#"><img src="images/icons/Telegram.svg" alt="Telegram"></a></li>
+                    <li><a href="#"><img src="images/icons/Instagram.svg" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="images/icons/VKontakte.svg" alt="VKontakte"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="libraries/swiper/swiper-bundle.min.js"></script>
+    <!-- Datepicker JS -->
+    <script src="libraries/datepicker/datepicker.ru.js"></script>
+
+    <script src="scripts/header.js"></script>
+
+    <script src="scripts/main-page/swiper-types.js"></script>
+    <script src="scripts/main-page/card-styling.js"></script>
+    <!-- Dropdowns -->
+    <script src="scripts/dropdowns.js"></script>
+    <script src="helpful-scripts/filter-cards.js"></script>
+    <script src="helpful-scripts/sort-price-cards.js"></script>
+
+    <script src="scripts/main-page/load-to-storage.js"></script>
+    <script src="scripts/main-page/time-inputs.js"></script>
+</body>
+</html>

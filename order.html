@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- CSS Normolise -->
+    <link rel="stylesheet" href="styles/total-clear.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="styles/general.css">
+    <!-- Header -->
+    <link rel="stylesheet" href="styles/header.css">
+    <!-- Footer -->
+    <link rel="stylesheet" href="styles/footer.css">
+
+    <!-- Таблица деталей заказа -->
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/order-page/table-product.css">
+    <!-- Форма регистрации -->
+    <link rel="stylesheet" href="styles/order-page/order-form.css">
+    <!-- Dropdowns -->
+    <link rel="stylesheet" href="styles/dropdowns.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <nav id="nav">
+                    <a href="/"><img id="header-logo" src="images/LogoGS.png" alt="Logo"></a>
+                    <a id="header-tel" href="tel:+998335005050">+998(33)-500-50-50</a>
+                    <a href="#" id="login">Войти</a>
+                    <ul id="nav-menu">
+                        <li class="nav-link active"><a href="/">Аренда</a></li>
+                        <li class="nav-link"><a href="#">Доставка</a></li>
+                        <li class="nav-link"><a href="#">Где кататься</a></li>
+                        <li class="nav-link"><a href="#">Контакты</a></li>
+                        <li class="nav-link"><a href="#">О нас</a></li>
+                        <li class="nav-link tel hidden"><a href="tel:+998335005050">+998(33)-500-50-50</a></li>
+                        <li class="nav-link btn hidden"><a href="#">Войти</a></li>
+                    </ul>
+                    <div id="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="margin_top">
+        <div class="container">
+            <div class="wrapper min-padding">
+                <h1 class="main-title center">Заявка на аренду велосипедов</h1>
+                <ul class="order-info">
+                    <li class="info-item">
+                        <h3 class="info-item__title">Тип аренды</h3>
+                        <p class="info-item__text" id="order-type">По дням</p>
+                        <input type="hidden" id="order-type-data" value="По дням">
+                    </li>
+                    <li class="info-item">
+                        <h3 class="info-item__title">Дата и время начала</h3>
+                        <p class="info-item__text" id="order-start">23.02.2024 16:00</p>
+                        <input type="hidden" id="order-start-data" value="23.02.2024 16:00">
+                    </li>
+                    <li class="info-item">
+                        <h3 class="info-item__title">Дата и время конца</h3>
+                        <p class="info-item__text" id="order-end">24.02.2024 18:00</p>
+                        <input type="hidden" id="order-end-data" value="24.02.2024 18:00">
+                    </li>
+                    <li class="info-item">
+                        <h3 class="info-item__title">Доставка</h3>
+                        <p class="info-item__text" id="order-delivery">По адресу</p>
+                        <input type="hidden" id="order-delivery-data" value="По адресу">
+                    </li>
+                </ul>
+
+                <ul class="table_main">
+                    <li class="table_item">
+                        <ul class="table_row">
+                            <li class="table_column text photo">Фото</li>
+                            <li class="table_column text title">Название</li>
+                            <li class="table_column text number">Количество</li>
+                            <li class="table_column text price">Цена за день</li>
+                            <li class="table_column text total">Цена</li>
+
+                            <li class="table_column photo">
+                                <div class="table_photo">
+                                    <img src="images/bikes/family/family_01.png" alt="photo">
+                                </div>
+                            </li>                                        
+                            <li class="table_column value title">Canondale Explorer 7</li>
+                            <li class="table_column value buttons">
+                                <button class="table_btn minus">-</button>
+                                <input class="table_input" readonly value="1"></input>
+                                <button class="table_btn plus">+</button>
+                            </li>
+                            <li class="table_column value price">50 тыс</li>
+                            <li class="table_column value total">
+                                <p class="money" data-price="50">50 тыс</p>
+                            </li>
+                        </ul>
+                        <form action="/order-detail" class="table-item-form">
+                            <input type="hidden" name="bycicle-id" value="" class="table-item-input bycicle-id">
+                            <input type="hidden" name="amount" value="" class="table-item-input amount">
+                            <input type="hidden" name="detail-cost" value="" class="table-item-input detail-cost">
+                        </form>
+                    </li>
+                    
+                    <li class="table_item">
+                        <ul class="table_row">
+                            <li class="table_column text photo">Фото</li>
+                            <li class="table_column text title">Название</li>
+                            <li class="table_column text number">Количество</li>
+                            <li class="table_column text price">Цена за день</li>
+                            <li class="table_column text total">Цена</li>
+
+                            <li class="table_column photo">
+                                <div class="table_photo">
+                                    <img src="images/bikes/family/family_01.png" alt="photo">
+                                </div>
+                            </li>                                        
+                            <li class="table_column value title">Canondale Explorer 7</li>
+                            <li class="table_column value buttons">
+                                <button class="table_btn minus">-</button>
+                                <input class="table_input" readonly value="1"></input>
+                                <button class="table_btn plus">+</button>
+                            </li>
+                            <li class="table_column value price">50 тыс</li>
+                            <li class="table_column value total">
+                                <p class="money" data-price="50">50 тыс</p>
+                            </li>
+                        </ul>
+                        <form action="/order-detail" class="table-item-form">
+                            <input type="hidden" name="bycicle-id" value="" class="table-item-input bycicle-id">
+                            <input type="hidden" name="amount" value="" class="table-item-input amount">
+                            <input type="hidden" name="detail-cost" value="" class="table-item-input detail-cost">
+                        </form>
+                    </li>
+                </ul>
+
+                <div class="delivery-info">
+                    <a href="#" id="back-to-main-link">
+                        <img src="images/icons/left_arrow.svg" alt="<">
+                        Назад к выбору велосипедов
+                    </a>
+                    <div class="final-cost">
+                        <p class="final-cost__item">Доставка</p>
+                        <p class="final-cost__item" id="final-delivery"></p>
+                        <p class="final-cost__item">Итого</p>
+                        <p class="final-cost__item" id="final-price"></p>
+                    </div>
+                </div>
+
+                <div class="account_info">
+                    <a href="#" class="account_link">В личный кабинет</a>
+                    <!-- <article class="arrange-message">
+                        <div class="triangle"></div>
+                        * Подтвердите регистрацию, чтобы иметь доступ к истории заказов!
+                    </article> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="connector"></div>
+            <div class="wrapper oveflow_visible">
+                <div class="reg-data">
+                    <form action="" class="reg-form">
+                        <div class="form-item name">
+                            <label class="form-label" for="user-name">Имя</label>
+                            <input type="text" class="reg-input" id="user-name" placeholder="Ваше имя *" minlength="2" maxlength="15" pattern="[^\d]*" title="Имя должно состоять только из букв!">
+                        </div>
+                        <div class="form-item phone">
+                            <label class="form-label" for="user-phone">Телефон</label>
+                            <input type="text" class="reg-input" id="user-phone" placeholder="XX XXX-XX-XX *" pattern="[\d]*" title="Номер ложден соответствовать формату и содержать только числа!">
+                        </div>
+                        <div class="form-item start-address">
+                            <label class="form-label" for="user-address">Куда доставлять</label>
+                            <div class="dropdown">
+                                <input type="text" class="reg-input input-params" id="user-address" placeholder="Выберите пункт" readonly>
+                                <ul class="option">
+                                    <li class="option__param">Ботанический сад</li>
+                                    <li class="option__param">Монумент мужества</li>
+                                    <li class="option__param">Бродвей (Сквер)</li>
+                                    <li class="option__param">ЦУМ</li>
+                                    <li class="option__param">Дружба народов</li>
+                                    <li class="option__param">Парк Сергели</li>
+                                    <li class="option__param">Парк Дустлик</li>
+                                </ul>
+                            </div>
+                            <!-- <input type="text" class="reg-input" id="user-address" name="user-address" placeholder="Адрес *"> -->
+                        </div>
+                        <div class="form-item payment">
+                            <p class="form-label">Форма оплаты</p>
+                            <div class="form-item-wrapper">
+                                <button type="button" class="payment-type-btn active">
+                                    <div class="circle"><div class="cicle-check"></div></div>
+                                    Онлайн
+                                </button>
+                                <button type="button" class="payment-type-btn">
+                                    <div class="circle"><div class="cicle-check"></div></div>
+                                    На месте
+                                </button>
+                            </div>
+                            <input type="hidden" id="user-payment" value="online">
+                        </div>
+                        <div class="form-item return-date">
+                            <p class="form-label">Фактическая дата возврата</p>
+                            <div class="form-item-wrapper">
+                                <div class="return-info date"></div>
+                                <div class="return-info time"></div>
+                            </div>
+                        </div>
+                        <div class="form-item return-address">
+                            <label class="form-label" for="user-return">Возврат по адресу</label>
+                            <!-- <div class="dropdown">
+                                <input type="text" class="reg-input input-params" id="user-return" placeholder="Выберите пункт" readonly>
+                                <ul class="option">
+                                    <li class="option__param">Ботанический сад</li>
+                                    <li class="option__param">Монумент мужества</li>
+                                    <li class="option__param">Мустакиллик</li>
+                                    <li class="option__param">ЦУМ</li>
+                                    <li class="option__param">Дружба народов</li>
+                                    <li class="option__param">Парк Сергели</li>
+                                    <li class="option__param">Парк Дустлик</li>
+                                </ul>
+                            </div>
+                            <input type="text" class="reg-input" id="user-return" name="user-return" placeholder="Адрес *"> -->
+                        </div>
+                        <div class="form-item extra info-1">
+                            <h3 class="form-label">Возвращение велосипеда</h3>
+                            <p>На возврат велосипеда(ов) отводится 30 минут.
+                                <br>По истечении данного срока, при возврате необходимо оплатить каждые 10 минут просрочки.</p>
+                        </div>
+                        <div class="form-item extra info-2">
+                            <h3 class="form-label">Выбор адреса для возврата</h3>
+                            <p>Данная опция доступна только когда:
+                                <br>время аренды более 2 часов (при почасовой аренде)
+                                <br>или же при аренде по дням!</p>
+                        </div>
+                        <button type="submit" id="submit-order-btn" class="disabled" disabled>Забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <img class="footer-logo" src="images/open-bike-logoGS.png" alt="LOGO">
+                <div class="contacts">
+                    <h3>Контакты:</h3>
+                    <ul>
+                        <li>100154,<br>Узбекстан, г.Ташкент</li>
+                        <li><a href="mailto:info@open-bike.uz">info@open-bike.uz</a></li>
+                        <li><a href="tel:+998335005050">+ 998(33)-500-50-50</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© OpenBike 2024</p>
+                <ul class="socials">
+                    <li><a href="#"><img src="images/icons/Telegram.svg" alt="Telegram"></a></li>
+                    <li><a href="#"><img src="images/icons/Instagram.svg" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="images/icons/VKontakte.svg" alt="VKontakte"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/header.js"></script>
+    <script src="libraries/cleave/cleave.min.js"></script>
+    <script src="libraries/cleave/cleave-phone.uz.js"></script>
+    
+    <!-- Расчет времени аренды, цены и количества великов -->
+    <!-- <script src="scripts/order-page/order.js"></script> -->
+    <!-- Render Dropdowns or Inputs -->
+    <script src="scripts/order-page/render-drop-or-inputs_copy.js"></script>
+    <!-- Dropdowns -->
+    <script src="scripts/dropdowns.js"></script>
+    
+    
+    <!-- Валидация формы регистрации -->
+    <!-- <script src="scripts/order-page/reg-form.js"></script> -->
+</body>
+</html>

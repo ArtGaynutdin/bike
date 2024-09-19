@@ -1,0 +1,289 @@
+.sub_title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--main_text);
+    text-align: center;
+
+    margin: 50px 0 15px;
+}
+.sub_title:first-child {
+    margin-top: 40px
+}
+
+.table_1, .table_2 {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+}
+.table_1 {
+    grid-template-areas:
+    'order_type_1 start_add_1 end_add_1 pricing_1'
+    'detail_1 start_value_1 end_value_1 pricing_value_1'
+    'detail_1 start_value_2 end_value_2 pricing_value_2'
+    'detail_2 start_value_3 end_value_3 pricing_value_3'
+    'detail_2 start_value_4 end_value_4 pricing_value_4';
+}
+.table_2 {
+    grid-template-areas:
+    'order_type_1 start_add_1 end_add_1 pricing_1'
+    'detail_1 start_value_1 end_value_1 pricing_value_1'
+    'detail_1 start_value_2 end_value_2 pricing_value_2'
+}
+
+.table_item {
+    border: 1px solid var(--grey-border);
+    text-align: center;
+
+    display: grid;
+    place-content: center;
+    padding-block: 20px;
+
+    background-color: var(--light-green-1);
+    color: var(--main_text);
+}
+.table_2 .table_item {
+    padding-inline: 10px;
+}
+
+.order_type_1, .order_type_2,
+.start_add_1, .start_add_2,
+.end_add_1, .end_add_2,
+.pricing_1, .pricing_2,
+.detail_1, .detail_2 {
+    background-color: var(--green);
+    color: #fff;
+}
+.money {
+    font-weight: 700;
+    color: var(--green);
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: var(--light-green-3);
+    display: inline;
+    font-size: 19px;
+}
+
+.order_type_1 {
+    grid-area: order_type_1;
+}
+.order_type_2 {
+    grid-area: order_type_2;
+    display: none;
+}
+.detail_1 {
+    grid-area: detail_1;
+}
+.detail_2 {
+    grid-area: detail_2;
+}
+
+.start_add_1 {
+    grid-area: start_add_1;
+}
+.start_add_2 {
+    grid-area: start_add_2;
+    display: none;
+}
+.start_add_3 {
+    grid-area: start_add_3;
+    display: none;
+}
+.start_add_4 {
+    grid-area: start_add_4;
+    display: none;
+}
+.start_value_1 {
+    grid-area: start_value_1;
+}
+.start_value_2 {
+    grid-area: start_value_2;
+}
+.start_value_3 {
+    grid-area: start_value_3;
+}
+.start_value_4 {
+    grid-area: start_value_4;
+}
+
+.end_add_1 {
+    grid-area: end_add_1;
+}
+.end_add_2 {
+    grid-area: end_add_2;
+    display: none;
+}
+.end_add_3 {
+    grid-area: end_add_3;
+    display: none;
+}
+.end_add_4 {
+    grid-area: end_add_4;
+    display: none;
+}
+.end_value_1 {
+    grid-area: end_value_1;
+}
+.end_value_2 {
+    grid-area: end_value_2;
+}
+.end_value_3 {
+    grid-area: end_value_3;
+}
+.end_value_4 {
+    grid-area: end_value_4;
+}
+
+.pricing_1 {
+    grid-area: pricing_1;
+}
+.pricing_2 {
+    grid-area: pricing_2;
+    display: none;
+}
+.pricing_3 {
+    grid-area: pricing_3;
+    display: none;
+}
+.pricing_4 {
+    grid-area: pricing_4;
+    display: none;
+}
+.pricing_value_1 {
+    grid-area: pricing_value_1;
+}
+.pricing_value_2 {
+    grid-area: pricing_value_2;
+}
+.pricing_value_3 {
+    grid-area: pricing_value_3;
+}
+.pricing_value_4 {
+    grid-area: pricing_value_4;
+}
+
+.start_value_2, .end_value_2, .pricing_value_2 {
+    border-bottom: 1px dashed var(--main_text);
+}
+.start_value_3, .end_value_3, .pricing_value_3 {
+    border-top: 1px dashed var(--main_text);
+}
+
+.table_2 .start_value_2,
+.table_2 .end_value_2,
+.table_2 .pricing_value_2 {
+    border-bottom: unset;
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+    .start_value_2, .end_value_2, .pricing_value_2 {
+        border-bottom: unset;
+    }
+    .start_value_3, .end_value_3, .pricing_value_3 {
+        border-top: unset;
+    }
+    .table_1 .order_type_2,
+    .table_1 .start_add_2,
+    .table_1 .end_add_2,
+    .table_1 .pricing_2 {
+        display: block;
+    }
+
+    .table_2 .order_type_2,
+    .table_2 .start_add_2,
+    .table_2 .end_add_2,
+    .table_2 .pricing_2 {
+        display: none;
+    }
+
+    .table_1 {
+        grid-template-areas:
+        'order_type_1 detail_1 detail_1'
+        'start_add_1 start_value_1 start_value_2'
+        'end_add_1 end_value_1 end_value_2'
+        'pricing_1 pricing_value_1 pricing_value_2'
+        'order_type_2 detail_2 detail_2'
+        'start_add_2 start_value_3 start_value_4'
+        'end_add_2 end_value_3 end_value_4'
+        'pricing_2 pricing_value_3 pricing_value_4';
+    }
+    .table_2 {
+        grid-template-areas:
+        'order_type_1 detail_1 detail_1'
+        'start_add_1 start_value_1 end_value_1'
+        'end_add_1 start_value_2 end_value_2'
+        'pricing_1 pricing_value_1 pricing_value_2';
+    }
+    .table_item {
+        padding-inline: 10px;
+    }
+    .start_add_1, .start_add_2,
+    .end_add_1, .end_add_2,
+    .pricing_1, .pricing_2 {
+        background-color: var(--light-green-1);
+        color: var(--main_text);
+    }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    .sub_title {
+        font-size: 20px;
+    }
+
+    .order_type_3, .order_type_4,
+    .start_add_3, .start_add_4,
+    .end_add_3, .end_add_4,
+    .pricing_3, .pricing_4 {
+        display: block;
+    }
+    .pricing_1, .pricing_value_1,
+    .pricing_3, .pricing_value_3 {
+        border-bottom: 1px dashed var(--main_text);
+    }
+    .start_add_2, .start_value_2,
+    .start_add_4, .start_value_4 {
+        border-top: 1px dashed var(--main_text);
+    }
+    .table_1 {
+        grid-template-areas:
+        'order_type_1 detail_1'
+        'start_add_1 start_value_1'
+        'end_add_1 end_value_1'
+        'pricing_1 pricing_value_1'
+        'start_add_2 start_value_2'
+        'end_add_2 end_value_2'
+        'pricing_2 pricing_value_2'
+        
+        'order_type_2 detail_2'
+        'start_add_3 start_value_3'
+        'end_add_3 end_value_3'
+        'pricing_3 pricing_value_3'
+        'start_add_4 start_value_4'
+        'end_add_4 end_value_4'
+        'pricing_4 pricing_value_4';
+    }
+
+    .table_2 .order_type_2,
+    .table_2 .start_add_2,
+    .table_2 .end_add_2,
+    .table_2 .pricing_2 {
+        display: block;
+    }
+
+    .table_2 {
+        grid-template-areas:
+        'order_type_1 detail_1'
+        'start_add_1 start_value_1'
+        'end_add_1 end_value_1'
+        'pricing_1 pricing_value_1'
+
+        'start_add_2 start_value_2'
+        'end_add_2 end_value_2'
+        'pricing_2 pricing_value_2';
+    }
+    .table_item {
+        padding: 9px;
+    }
+}

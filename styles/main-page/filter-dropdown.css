@@ -1,0 +1,156 @@
+/* --------------------- Options --------------------- */
+:root {
+    --before-z-index: 4;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    align-items: flex-end;
+}
+.filters__item p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--grey_text);
+}
+
+/* Кнопка сброса */
+#reload-button {
+    height: 60px;
+    cursor: pointer;
+    padding: 0 20px;
+    z-index: 3;
+    margin-top: 31px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    color: var(--main_text);
+    font-size: inherit;
+    
+    border-radius: 15px;
+}
+#reload-button img {
+    transition: all 0.2s ease-out;
+}
+#reload-button:hover img {
+    transform: rotate(180deg);
+}
+
+/* Всё о времени */
+.time-inputs {
+    padding: 0 40px 40px 40px;
+}
+
+/* Тогл типа времени */
+#time-toggle {
+    height: 60px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    color: var(--main_text);
+    font-size: inherit;
+    
+    border-radius: 15px;
+
+    position: relative;
+}
+#time-toggle p {
+    margin: 0;
+    z-index: 4;
+    color: var(--main_text);
+}
+#time-toggle p.active {
+    color: #fff;
+}
+
+#time-toggle-selection {
+    position: absolute;
+    left: 5px;
+
+    width: 48%;
+    height: 85%;
+
+    background-color: var(--green);
+    border-radius: 10px;
+    z-index: 3;
+
+    transition: all 0.3s ease-out;
+}
+#time-toggle-selection.changed {
+    transform: translateX(100%);
+}
+
+/* Time-инпуты */
+.time-input {
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    padding: 20px;
+    /* z-index: 3; */
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    color: var(--main_text);
+    font-size: inherit;
+    
+    border-radius: 15px;
+}
+
+#arrange-btn.disabled {
+    background-color: #fff;
+    color: var(--grey_text);
+    border: 2px solid var(--grey-border);
+    cursor: not-allowed;
+}
+
+/* --------------------- Adaptive - Responsive --------------------- */
+/* 992px - 1200px */
+@media screen and (max-width: 1280px) {
+    .time-inputs {
+        margin-top: 40px;
+    }
+    .filters.response {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+    .filters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+    .filters.response {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    .filters {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .filters__item p:first-child {
+        margin-top: 15px;
+    }
+    .time-inputs {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,161 @@
+/* --------------------- Типы великов (слайдер, выпадашки, кнопка) --------------------- */
+.swiper {
+    overflow: visible !important;
+}
+
+.bikes_types {
+    display: flex;
+    gap: 40px;
+}
+.slider_nav_buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.slider_nav_buttons p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--grey_text);
+    margin-right: auto;
+}
+.slider_btn {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+
+    font-family: inherit;
+    font-size: 23px;
+    color: var(--green);
+    background-color: var(--background);
+    border: 2px solid var(--green);
+    border-radius: 10px;
+}
+
+.bike_type {
+    width: 260px;
+    min-height: 140px;
+    margin-top: 210px;
+    padding: 50px 25px 20px;
+    position: relative;
+
+    background-color: #fff;
+    border-radius: 15px;
+}
+.bike_type:hover .type__photo {
+    scale: 1.04;
+}
+.type__photo {
+    position: absolute;
+    width: 230px;
+    top: -115px;
+    left: 50%;
+    margin-left: -115px;
+    transition: all 0.2s ease-out;
+}
+.type__photo.big{
+    top: -194px;
+}
+.type__info {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 15px;
+}
+.type__info p {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    margin-right: auto;
+}
+.type_btn {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    color: var(--green);
+    font-size: 25px;
+    font-weight: 600;
+
+    transition: all 0.3s ease-out;
+}
+.type_btn:nth-child(even) {
+    font-size: 20px;
+    margin-left: 0;
+}
+.type_btn:hover {
+    color: #fff;
+    background-color: var(--green);
+}
+.type_btn.cheked {
+    color: #fff;
+    background-color: var(--green);
+    font-size: 20px;
+}
+
+.action-button {
+    width: 260px;
+    height: 60px;
+    display: block;
+    margin: 45px auto 0;
+
+    background-color: var(--green);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+
+    transition: all 0.1s ease-out;
+}
+.action-button:hover {
+    font-size: 22px;
+    font-weight: 700;
+    border: 2px solid #fff;
+    box-shadow: inset 0 0 15px 0 #fff;
+}
+#search-btn.disabled {
+    background-color: #fff;
+    color: var(--grey_text);
+    border: 2px solid var(--grey-border);
+    cursor: not-allowed;
+}
+
+.tooltip {
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    bottom: -105px;
+    
+    color: var(--grey_text);
+    font-size: 16px;
+    line-height: 120%;
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    border-radius: 15px;
+    z-index: 5;
+
+    transition: all 0.3s ease-out;
+}
+.tooltip::after {
+    content: ''; 
+    position: absolute;
+    bottom: 100%;
+    left: 55%;
+    border: 20px solid transparent;
+    border-bottom: 20px solid var(--grey-border);
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    .action-button {
+        width: 100%;
+    }
+}

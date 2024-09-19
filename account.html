@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- CSS Normolise -->
+    <link rel="stylesheet" href="styles/total-clear.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="styles/general.css">
+    <!-- Header -->
+    <link rel="stylesheet" href="styles/header.css">
+    <!-- Footer -->
+    <link rel="stylesheet" href="styles/footer.css">
+
+    <!-- Общие стили табов -->
+    <link rel="stylesheet" href="styles/account/tabs.css">
+    <!-- Личные данные -->
+    <link rel="stylesheet" href="styles/account/personal.css">
+    <!-- Заказы -->
+    <link rel="stylesheet" href="styles/account/orders.css">
+    <!-- Таблица деталей заказа -->
+    <link rel="stylesheet" href="styles/table.css">
+    <!-- Модалки -->
+    <link rel="stylesheet" href="styles/account/cancel_modal.css">
+    <link rel="stylesheet" href="styles/account/payment_modal.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <nav id="nav">
+                    <a href="/"><img id="header-logo" src="images/LogoGS.png" alt="Logo"></a>
+                    <a id="header-tel" href="tel:+998335005050">+998(33)-500-50-50</a>
+                    <!-- <a href="#" id="login">Войти</a> -->
+                    <a href="#" id="account">
+                        <p>Артур</p>
+                        <img src="images/icons/account.svg" alt="account">
+                    </a>
+                    <ul id="nav-menu">
+                        <li class="nav-link active"><a href="/">Аренда</a></li>
+                        <li class="nav-link"><a href="#">Доставка</a></li>
+                        <li class="nav-link"><a href="#">Где кататься</a></li>
+                        <li class="nav-link"><a href="#">Контакты</a></li>
+                        <li class="nav-link"><a href="#">О нас</a></li>
+                        <li class="nav-link tel hidden"><a href="tel:+998335005050">+998(33)-500-50-50</a></li>
+                        <li class="nav-link account hidden">
+                            <a href="#" id="account_mobile">
+                                <p>Артур</p>
+                                <img src="images/icons/account.svg" alt="account">
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="margin_top">
+        <div class="container">
+            <div class="wrapper">
+                <h1 class="main-title">Личный кабинет</h1>
+
+                <ul class="tabs">
+                    <li class="tab_btn active">Текущие заказы</li>
+                    <li class="tab_btn">Выполненные заказы</li>
+                    <li class="tab_btn">Личные данные</li>
+                </ul>
+
+                <ul class="tabs_wrapper">
+                    <li class="tab_content active" id="current_orders">
+                        <article class="order">
+                            <ul class="order_header">
+                                <li class="header_item text number">Номер заказа</li>
+                                <li class="header_item text date">Дата</li>
+                                <li class="header_item text payment">Статус оплаты</li>
+                                <li class="header_item text status">Статус заказа</li>
+
+                                <li class="header_item value number">Заказ №7</li>
+                                <li class="header_item value date">21.03.2024</li>
+                                <li class="header_item value payment">
+                                    <p class="payment_value red">Не оплачен</p>
+                                </li>
+                                <li class="header_item value status">
+                                    <p class="status_value yellow">Доставляется</p>
+                                </li>
+                                <li class="header_item detail_btn">
+                                    <button class="show_hide_details_btn">
+                                        <p class="details_btn_inner">Подробности</p>
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="details">
+                                <div class="details_inner">
+                                    <ul class="table_main">
+                                        <li class="table_item">
+                                            <ul class="table_row">
+                                                <li class="table_column text photo">Фото</li>
+                                                <li class="table_column text title">Название</li>
+                                                <li class="table_column text number">Количество</li>
+                                                <li class="table_column text price">Цена за день</li>
+                                                <li class="table_column text total">Цена</li>
+
+                                                <li class="table_column photo">
+                                                    <div class="table_photo">
+                                                        <img src="images/bikes/family/family_01.png" alt="photo">
+                                                    </div>
+                                                </li>                                        
+                                                <li class="table_column value title">Canondale Explorer 7</li>
+                                                <li class="table_column value number">2 шт</li>
+                                                <li class="table_column value price">100 тыс</li>
+                                                <li class="table_column value total">
+                                                    <p class="money">200 тыс</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="table_item">
+                                            <ul class="table_row">
+                                                <li class="table_column text photo">Фото</li>
+                                                <li class="table_column text title">Название</li>
+                                                <li class="table_column text number">Количество</li>
+                                                <li class="table_column text price">Цена за день</li>
+                                                <li class="table_column text total">Цена</li>
+
+                                                <li class="table_column photo">
+                                                    <div class="table_photo">
+                                                        <img src="images/bikes/women/women_01.png" alt="photo">
+                                                    </div>
+                                                </li>                                        
+                                                <li class="table_column value title">Yeti Dreamer S-1</li>
+                                                <li class="table_column value number">2 шт</li>
+                                                <li class="table_column value price">100 тыс</li>
+                                                <li class="table_column value total">
+                                                    <p class="money">70 тыс</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    
+                                    <ul class="table_info">
+                                        <li class="info_item text type">Тип аренды</li>
+                                        <li class="info_item text par_1">Дата и время начала</li>
+                                        <li class="info_item text par_2">Дата и время конца</li>
+                                        <li class="info_item text info">Срок аренды</li>
+
+                                        <li class="info_item value type">По часам</li>
+                                        <li class="info_item value par_1">2024-03-21 16:00:00</li>
+                                        <li class="info_item value par_2">2024-03-21 18:00:00</li>
+                                        <li class="info_item value info">2 ч</li>
+                                    </ul>
+                                    <ul class="table_info">
+                                        <li class="info_item text type">Тип доставки</li>
+                                        <li class="info_item text par_1">Начальный адрес</li>
+                                        <li class="info_item text par_2">Конечный адрес</li>
+                                        <li class="info_item text info">Стоимость доставки</li>
+
+                                        <li class="info_item value type">В пункт выдачи</li>
+                                        <li class="info_item value par_1">метро Буюк Ипак Йоли</li>
+                                        <li class="info_item value par_2">сквер Амира Темура</li>
+                                        <li class="info_item value info">
+                                            <p class="money">30 тыс</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="final_info">
+                                        <li class="final_item">
+                                            <h3 class="final_title">Тип оплаты</h3>
+                                            <p class="payment_type">Онлайн</p>
+                                            <!-- На месте (карта или наличные) -->
+                                        </li>
+                                        <li class="final_item">
+                                            <h3 class="final_title">Итоговая сумма</h3>
+                                            <p class="total_sum">770 тыс</p>
+                                        </li>
+                                    </ul>
+                                    <div class="buttons_wrapper">
+                                        <button class="order_button to_pay">Оплатить</button>
+                                        <form method="#" action="#" class="cancel_form">
+                                            <input type="hidden" name="order_id" value="Сработало 1">
+                                            <button type="button" class="order_button to_cancel">Отменить заказ</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="payment_modal none">
+                                <div class="payment_slide first">
+                                    <form method="#" action="#" class="payment_form">
+                                        <button type="button" class="payment_close_btn">
+                                            <img src="images/icons/close_icon_dark.svg" alt="X">
+                                        </button>
+                                        <div class="payment_form_item">
+                                            <h3>Номер карты</h3>
+                                            <input class="payment_input card_number" type="text" name="card_number" placeholder="XXXX XXXX XXXX XXXX" minlength="19" maxlength="19">
+                                        </div>
+                                        <div class="payment_form_item">
+                                            <h3>Срок действия</h3>
+                                            <div class="inputs_wrapper">
+                                                <input class="payment_input date_1" type="text" name="card_month" placeholder="ММ" maxlength="2">
+                                                /
+                                                <input class="payment_input date_2" type="text" name="card_year" placeholder="ГГ" maxlength="2">
+                                            </div>
+                                        </div>
+                                        <div class="payment_form_item check">
+                                            <input class="payment_input check" type="checkbox" name="reg_card" value="false">
+                                            <h3 class="label_for_check">Привязать карту к аккаунту</h3>
+                                        </div>
+                                        <input type="hidden" class="payment_input hidden">
+                                        <button type="button" class="payment_btn first disabled" disabled>
+                                            Оплатить 27 тыс
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="payment_slide second hidden">
+                                    <div class="slide_inner">
+                                        <div class="slide_text">
+                                            <h3 class="payment_title">Введите код отправленный на номер:</h3>
+                                            <p class="payment_phone">91-164-70-45</p>
+                                        </div>
+                                        <form method="#" action="#" class="code_form">
+                                            <input type="text" class="code_input" maxlength="1">
+                                            <input type="text" class="code_input" maxlength="1">
+                                            <input type="text" class="code_input" maxlength="1">
+                                            <input type="text" class="code_input" maxlength="1">
+                                            <button type="button" class="payment_btn send">Отправить</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cancel_modal none">
+                                <div class="cancel_text">
+                                    <h3 class="cancel_title">Хотите отменить заказ?</h3>
+                                    <p class="cancel_paragraph">Данное действие нельзя будет отменить!</p>
+                                </div>
+                                <div class="cancel_buttons">
+                                    <button class="modal_btn yes">Да</button>
+                                    <button class="modal_btn no">Нет</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="order">
+                            <ul class="order_header">
+                                <li class="header_item text number">Номер заказа</li>
+                                <li class="header_item text date">Дата</li>
+                                <li class="header_item text payment">Статус оплаты</li>
+                                <li class="header_item text status">Статус заказа</li>
+
+                                <li class="header_item value number">Заказ №7</li>
+                                <li class="header_item value date">21.03.2024</li>
+                                <li class="header_item value payment">
+                                    <p class="payment_value red">Не оплачен</p>
+                                </li>
+                                <li class="header_item value status">
+                                    <p class="status_value yellow">Доставляется</p>
+                                </li>
+                                <li class="header_item detail_btn">
+                                    <button class="show_hide_details_btn">
+                                        <p class="details_btn_inner">Подробности</p>
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="details">
+                                <div class="details_inner">
+                                    <ul class="table_main">
+                                        <li class="table_item">
+                                            <ul class="table_row">
+                                                <li class="table_column text photo">Фото</li>
+                                                <li class="table_column text title">Название</li>
+                                                <li class="table_column text number">Количество</li>
+                                                <li class="table_column text price">Цена за день</li>
+                                                <li class="table_column text total">Цена</li>
+
+                                                <li class="table_column photo">
+                                                    <div class="table_photo">
+                                                        <img src="images/bikes/family/family_01.png" alt="photo">
+                                                    </div>
+                                                </li>                                        
+                                                <li class="table_column value title">Canondale Explorer 7</li>
+                                                <li class="table_column value number">2 шт</li>
+                                                <li class="table_column value price">100 тыс</li>
+                                                <li class="table_column value total">
+                                                    <p class="money">200 тыс</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="table_item">
+                                            <ul class="table_row">
+                                                <li class="table_column text photo">Фото</li>
+                                                <li class="table_column text title">Название</li>
+                                                <li class="table_column text number">Количество</li>
+                                                <li class="table_column text price">Цена за день</li>
+                                                <li class="table_column text total">Цена</li>
+
+                                                <li class="table_column photo">
+                                                    <div class="table_photo">
+                                                        <img src="images/bikes/women/women_01.png" alt="photo">
+                                                    </div>
+                                                </li>                                        
+                                                <li class="table_column value title">Yeti Dreamer S-1</li>
+                                                <li class="table_column value number">2 шт</li>
+                                                <li class="table_column value price">100 тыс</li>
+                                                <li class="table_column value total">
+                                                    <p class="money">70 тыс</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="table_info">
+                                        <li class="info_item text type">Тип аренды</li>
+                                        <li class="info_item text par_1">Дата и время начала</li>
+                                        <li class="info_item text par_2">Дата и время конца</li>
+                                        <li class="info_item text info">Срок аренды</li>
+
+                                        <li class="info_item value type">По часам</li>
+                                        <li class="info_item value par_1">2024-03-21 16:00:00</li>
+                                        <li class="info_item value par_2">2024-03-21 18:00:00</li>
+                                        <li class="info_item value info">2 ч</li>
+                                    </ul>
+                                    <ul class="table_info">
+                                        <li class="info_item text type">Тип доставки</li>
+                                        <li class="info_item text par_1">Начальный адрес</li>
+                                        <li class="info_item text par_2">Конечный адрес</li>
+                                        <li class="info_item text info">Стоимость доставки</li>
+
+                                        <li class="info_item value type">В пункт выдачи</li>
+                                        <li class="info_item value par_1">метро Буюк Ипак Йоли</li>
+                                        <li class="info_item value par_2">сквер Амира Темура</li>
+                                        <li class="info_item value info">
+                                            <p class="money">30 тыс</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="final_info">
+                                        <li class="final_item">
+                                            <h3 class="final_title">Тип оплаты</h3>
+                                            <p class="payment_type">Онлайн</p>
+                                            <!-- На месте (карта или наличные) -->
+                                        </li>
+                                        <li class="final_item">
+                                            <h3 class="final_title">Итоговая сумма</h3>
+                                            <p class="total_sum">770 тыс</p>
+                                        </li>
+                                    </ul>
+                                    <div class="buttons_wrapper">
+                                        <button class="order_button to_pay">Оплатить</button>
+
+                                        <div class="payment_modal none">
+                                            <div class="payment_slide first">
+                                                <form method="#" action="#" class="payment_form">
+                                                    <button type="button" class="payment_close_btn">
+                                                        <img src="images/icons/close_icon_dark.svg" alt="X">
+                                                    </button>
+                                                    <div class="payment_form_item">
+                                                        <h3>Номер карты</h3>
+                                                        <input class="payment_input card_number" type="text" name="card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                                                    </div>
+                                                    <div class="payment_form_item">
+                                                        <h3>Срок действия</h3>
+                                                        <div class="inputs_wrapper">
+                                                            <input class="payment_input date_1" type="text" name="card_month" placeholder="ММ" maxlength="2">
+                                                            /
+                                                            <input class="payment_input date_2" type="text" name="card_year" placeholder="ГГ" maxlength="2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="payment_form_item check">
+                                                        <input class="payment_input check" type="checkbox" name="reg_card" value="false">
+                                                        <h3 class="label_for_check">Привязать карту к аккаунту</h3>
+                                                    </div>
+                                                    <input type="hidden" class="payment_input hidden">
+                                                    <button type="button" class="payment_btn first disabled" disabled>
+                                                        Оплатить 480 тыс
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="payment_slide second hidden">
+                                                <div class="slide_inner">
+                                                    <button type='button' class='payment_close_btn'>
+                                                        <img src='../../images/icons/close_icon_dark.svg' alt='X'>
+                                                    </button>
+                                                    <div class="slide_text">
+                                                        <h3 class="payment_title">Введите код отправленный на номер:</h3>
+                                                        <p class="payment_phone">91-164-70-45</p>
+                                                    </div>
+                                                    <form method="#" action="#" class="code_form">
+                                                        <input type="text" class="code_input" maxlength="1">
+                                                        <input type="text" class="code_input" maxlength="1">
+                                                        <input type="text" class="code_input" maxlength="1">
+                                                        <input type="text" class="code_input" maxlength="1">
+                                                        <button type="button" class="payment_btn send disabled" disabled>Отправить</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form method="get" action="#" class="cancel_form">
+                                            <input type="hidden" name="order_id" value="Сработало 2">
+                                            <button type="button" class="order_button to_cancel">Отменить заказ</button>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="cancel_modal none">
+                                <div class="cancel_text">
+                                    <h3 class="cancel_title">Хотите отменить заказ?</h3>
+                                    <p class="cancel_paragraph">Данное действие нельзя будет отменить!</p>
+                                </div>
+                                <div class="cancel_buttons">
+                                    <button class="modal_btn yes">Да</button>
+                                    <button class="modal_btn no">Нет</button>
+                                </div>
+                            </div>
+                            <!-- <div class="cancel_modal none">
+                                <button class="cancel_btn">Отменить заказ</button>
+                                <button class="close_btn">
+                                    <img src="images/icons/close_icon.svg" alt="X">
+                                </button>
+                            </div> -->
+                        </article>
+                    </li>
+
+                    <li class="tab_content" id="completed_orders">
+                        <div class="not-found">
+                            <img src="images/icons/not-found-icon.png" alt="not-found">
+                            <h3>
+                                Текущих заказов не найдено.
+                                <br>
+                                Перейдите на <a href="index.html">Главную</a> чтобы оформить заказ.
+                            </h3>
+                            <!-- Завершенных заказов не найдено. -->
+                        </div>
+                    </li>
+
+                    <li class="tab_content" id="personal">
+                        <ul class="personal_wrapper">
+                            <li class="personal_item">
+                                <h3 class="personal_title">Имя</h3>
+                                <div class="personal_data">
+                                    <p class="data_value">Артур</p>
+                                    <button class="action_btn edit" title="Редактировать">
+                                        <img src="images/icons/edit_icon.svg" alt="edit">
+                                    </button>
+                                </div>
+
+                                <div class="edit_personal_data none">
+                                    <form action="#" class="edit_form">
+                                        <input type="text" class="personal_edit_input" placeholder="Имя" name="user_name" id="user_name" minlength="1">
+                                        <button type="submit" class="action_btn submit disabled" id="submit_name" disabled>
+                                            <img src="images/icons/done_icon_disabled.svg" alt="edit">
+                                        </button>
+                                        <button type="button" class="action_btn close">
+                                            <img src="images/icons/close_icon.svg" alt="edit">
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="personal_item">
+                                <h3 class="personal_title">Телефон</h3>
+                                <div class="personal_data">
+                                    <p class="data_value">91-164-70-45</p>
+                                    <button class="action_btn edit" title="Редактировать">
+                                        <img src="images/icons/edit_icon.svg" alt="edit">
+                                    </button>
+                                </div>
+
+                                <div class="edit_personal_data none">
+                                    <form action="#" class="edit_form">
+                                        <input type="text" class="personal_edit_input" placeholder="XX-XXX-XX-XX" name="user_phone" id="user_phone" minlength="12">
+                                        <button type="submit" class="action_btn submit disabled" id="submit_phone" disabled>
+                                            <img src="images/icons/done_icon_disabled.svg" alt="edit">
+                                        </button>
+                                        <button type="button" class="action_btn close">
+                                            <img src="images/icons/close_icon.svg" alt="edit">
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="personal_item">
+                                <h3 class="personal_title">Пароль</h3>
+                                <div class="personal_data">
+                                    <p class="data_value">********</p>
+                                    <button class="action_btn edit" title="Редактировать">
+                                        <img src="images/icons/edit_icon.svg" alt="edit">
+                                    </button>
+                                </div>
+
+                                <div class="edit_personal_data none">
+                                    <form action="#" class="edit_form">
+                                        <input type="text" class="personal_edit_input" placeholder="Новый пароль" name="user_password" id="user_password" minlength="6">
+                                        <button type="submit" class="action_btn submit disabled" id="submit_password" disabled>
+                                            <img src="images/icons/done_icon_disabled.svg" alt="edit">
+                                        </button>
+                                        <button type="button" class="action_btn close">
+                                            <img src="images/icons/close_icon.svg" alt="edit">
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="personal_item" title="Выйти из аккаунта">
+                                <button id="exit_btn">
+                                    Выйти
+                                    <img src="images/icons/exit_icon.svg" alt="exit">
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p id="warning_msg" class="none">Заполните все поля формы!</p>
+
+                <div id="notification" class="warning">Пользователь с таким номером существует!</div>
+
+                <div id="overlay"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <img class="footer-logo" src="images/open-bike-logoGS.png" alt="LOGO">
+                <div class="contacts">
+                    <h3>Контакты:</h3>
+                    <ul>
+                        <li>100154,<br>Узбекстан, г.Ташкент</li>
+                        <li><a href="mailto:info@open-bike.uz">info@open-bike.uz</a></li>
+                        <li><a href="tel:+998335005050">+ 998(33)-500-50-50</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© OpenBike 2024</p>
+                <ul class="socials">
+                    <li><a href="#"><img src="images/icons/Telegram.svg" alt="Telegram"></a></li>
+                    <li><a href="#"><img src="images/icons/Instagram.svg" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="images/icons/VKontakte.svg" alt="VKontakte"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/header.js"></script>
+
+    <script src="libraries/cleave/cleave.min.js"></script>
+
+    <script src="scripts/tabs.js"></script>
+    <script src="scripts/account/validate-edit-form.js"></script>
+    <script src="scripts/account/person-edit.js"></script>
+
+    <script src="scripts/account/orders.js"></script>
+    <script src="scripts/account/cancel_modal.js"></script>
+    <!-- 194 & 346 -->
+    <script src="scripts/account/payment_modal.js"></script>
+
+    <script src="libraries/cleave/cleave.min.js"></script>
+</body>
+</html>

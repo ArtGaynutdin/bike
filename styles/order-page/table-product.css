@@ -1,0 +1,191 @@
+/* ----------------------- Информация дата, время ----------------------- */
+.order-info {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    margin-block: 40px;
+}
+.order-complite-info {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+
+    margin-top: 40px;
+}
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.info-item__title {
+    font-size: 16px;
+    color: var(--grey_text);
+}
+.info-item__text {
+    color: var(--main_text);
+}
+
+/* -------------- Основная таблица -------------- */
+.table_btn {
+    width: 40px;
+    height: 40px;
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+
+    font-size: 25px;
+    color: var(--main_text);
+}
+.table_btn:hover {
+    color: #fff;
+    background-color: var(--green);
+}
+.table_input {
+    width: 40px;
+    height: 40px;
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--green);
+    cursor: auto;
+}
+
+/* -------------- Информация о доставке и итоговой цене -------------- */
+.delivery-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 40px;
+}
+.final-cost {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 30px;
+    row-gap: 15px;
+}
+.final-cost.complite {
+    margin-top: 40px;
+    margin-left: auto;
+    width: 25%;
+}
+#back-to-main-link {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    border: 2px solid var(--green);
+    text-align: justify;
+    border-radius: 10px;
+    color: var(--green);
+
+    min-height: 60px;
+    max-width: 230px;
+}
+#back-to-main-link img {
+    margin-right: 15px;
+}
+.final-cost__item {
+    font-size: 16px;
+    color: var(--grey_text);
+}
+
+#final-delivery, #final-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    text-align: center;
+
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: var(--light-green-2);
+    display: inline;
+}
+
+.account_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account_link {
+    display: block;
+    margin-top: 40px;
+
+    width: 260px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+    background-color: var(--green);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.account_link:hover {
+    box-shadow: 0px 0px 15px 0px #fff inset;
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+    .order-info {
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+    .final-cost.complite {
+        width: 35%;
+    }
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+    .order-complite-info {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .final-cost.complite {
+        width: 50%;
+    }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    .order-info {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .order-complite-info {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .final-cost.complite {
+        width: 100%;
+    }
+    .delivery-info {
+        flex-direction: column;
+    }
+    #back-to-main-link {
+        order: 1;
+    }
+    .final-cost {
+        width: 100%;
+    }
+    #final-delivery, #final-price {
+       justify-self: end;
+    }
+    #back-to-main-link {
+        max-width: 100%;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .account_link {
+        width: 100%;
+    }
+}

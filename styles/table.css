@@ -1,0 +1,171 @@
+.table_main.margin_top {
+    margin-top: 30px;
+}
+
+.table_column.text {
+    font-size: 16px;
+    color: var(--grey_text);
+}
+
+.table_item {
+    padding-block: 15px;
+    border-bottom: 2px dashed var(--grey_text);
+}
+.table_row {
+    display: grid;
+    grid-template-columns: 0.1fr 0.3fr 0.2fr 0.2fr 0.2fr;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 10px;
+}
+
+/* Фото продукта */
+.table_photo {
+    width: 100%;
+    padding: 5%;
+
+    background-color: #fff;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table_photo img {
+    width: 90%;
+}
+
+/* Кнопки количества */
+.table_column.buttons {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.money {
+    font-weight: 700;
+    color: var(--green);
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: var(--light-green-2);
+    display: inline;
+    font-size: 19px;
+}
+.money.not {
+    color: var(--warning);
+    background-color: var(--light-warning);
+}
+
+
+/* 992px - 1200px */
+@media screen and (max-width: 1200px) {
+
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+    /* Строка таблицы */
+    .table_row {
+        grid-template-rows: 0.1fr 1fr 0.1fr 0.1fr;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    /* Строка # 1 */
+    .table_column.text.photo, .table_column.text.title {
+        grid-row-start: 1;
+    }
+    /* Строка # 2 */
+    .table_column.photo, .table_column.value.title {
+        grid-row-start: 2;
+    }
+    .table_column.text.photo, .table_column.photo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .table_column.text.title, .table_column.value.title {
+        grid-column-start: 2;
+        grid-column-end: 7;
+    }
+
+    /* Строка # 3 */
+    .table_column.text.number, .table_column.text.price, .table_column.text.total {
+        grid-row-start: 3;
+    }
+    /* Строка # 4 */
+    .table_column.value.number, .table_column.value.buttons,
+    .table_column.value.price, .table_column.value.total {
+        grid-row-start: 4;
+    }
+    .table_column.text.number, .table_column.value.number, .table_column.value.buttons {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .table_column.text.price, .table_column.value.price {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    .table_column.text.total, .table_column.value.total {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+    /* Подробная инфа */
+    .table_column.text.photo, .table_column.photo {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .table_column.text.title, .table_column.value.title {
+        grid-column-start: 3;
+        grid-column-end: 7;
+    }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    /* Подробная инфа */
+    .table_row {
+        grid-template-rows: 0.1fr 1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+        column-gap: 15px;
+    }
+    .table_column.text.photo, .table_column.photo {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .table_column.text.title, .table_column.value.title {
+        grid-column-start: 4;
+        grid-column-end: 7;
+    }
+    /* Строка # 3 */
+    .table_column.text.number {
+        grid-row-start: 3;
+        margin-top: 10px;
+    }
+    /* Строка # 4 */
+    .table_column.value.number, .table_column.value.buttons {
+        grid-row-start: 4;
+        margin-bottom: 10px;
+    }
+    .table_column.text.number, .table_column.value.number, .table_column.value.buttons {
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+    .table_column.text.price, .table_column.text.total {
+        grid-row-start: 5;
+    }
+    .table_column.value.price, .table_column.value.total {
+        grid-row-start: 6;
+    }
+    .table_column.text.price, .table_column.value.price {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .table_column.text.total, .table_column.value.total {
+        grid-column-start: 4;
+        grid-column-end: 7;
+    }
+}

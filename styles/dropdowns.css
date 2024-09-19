@@ -1,0 +1,82 @@
+/* --------------------- Dropdown --------------------- */
+:root {
+    --before-z-index: 4;
+}
+
+.dropdown {
+    position: relative;
+    height: 60px;
+}
+
+/* Стрелка иконка */
+.dropdown::before {
+    content: url(../../images/icons/drop_arrow.svg);
+    position: absolute;
+    right: 20px;
+    top: 23px;
+    transform: rotate(180deg);
+    z-index: var(--before-z-index);
+    
+    transition: 0.2s;
+    pointer-events: none;
+}
+.dropdown.active::before {
+    top: 17px;
+    transform: rotate(0);
+}
+
+/* Основное поле */
+.dropdown input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 3;
+
+    background-color: #fff;
+    border: 2px solid var(--grey-border);
+    outline: 0;
+    color: var(--main_text);
+    font-size: inherit;
+    font-family: inherit;
+    border-radius: 15px;
+}
+.dropdown input::placeholder {
+    color: var(--input-inner);
+}
+
+/* Поле со всеми значениями */
+.dropdown .option {
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    background-color: #fff;
+    color: var(--main_text);
+    border-radius: 15px;
+    border: 2px solid var(--grey-border);
+
+    display: none;
+    z-index: 2;
+
+    overflow: hidden;
+}
+.dropdown.active .option {
+    display: block;
+}
+
+.dropdown .option li {
+    padding: 18px 20px;
+    cursor: pointer;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+.dropdown .option li:first-child {
+    margin-top: 30px;
+}
+.dropdown .option li:hover {
+    background-color: var(--green);
+    color: #fff;
+}

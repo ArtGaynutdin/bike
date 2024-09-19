@@ -1,0 +1,41 @@
+.contacts_wrapper {
+    margin-block: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+        color: var(--main_text);
+    }
+    a, p {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--green);
+    }
+}
+
+.map {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 3/1;
+}
+
+@media screen and (max-width: 768px) {
+    .contacts_wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact {
+        align-items: center;
+    }
+    .map {
+        aspect-ratio: 1/1;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Верификация кода</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- CSS Normolise -->
+    <link rel="stylesheet" href="styles/total-clear.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="styles/general.css">
+    <!-- Стили сообщения -->
+    <link rel="stylesheet" href="styles/account/verify_msg.css">
+
+    <style>
+        #error_msg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            text-align: center;
+            color: var(--main_text);
+            h1 {
+                font-size: 200px;
+            }
+        }
+        .error_link {
+            width: 60%;
+            padding: 20px;
+            
+            background-color: var(--green);
+            color: #fff;
+            text-align: left;
+            line-height: 1.2;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 600;
+
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            img {
+                margin-left: 10px;
+            }
+        }
+        .error_link:hover {
+            box-shadow: 0px 0px 15px 0px #fff inset;
+        }
+        /* 320px - 576px */
+        @media screen and (max-width: 576px) {
+            #error_msg {
+                width: 90%;
+                h1 {
+                    font-size: 120px;
+                }
+            }
+            .error_link {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article id="error_msg">
+        <h1>404</h1>
+        <p>Страница не существует или еще не была создана</p>
+        <a class="error_link" href="">
+            На Главную
+            <img src="images/icons/right_arrow.svg" alt="->">
+        </a>
+    </article>
+
+    <!-- <article id="verify_msg" class="warning">
+        <h2 class="verify_title">Код не совпадает!</h2>
+        <a class="verify_link" href="#">
+            Попробовать заново
+            <img src="images/icons/right_arrow.svg" alt="->">
+        </a>
+        <h2 class="verify_title">Оплата прошла успешно!</h2>
+        <a class="verify_link" href="#">
+            В личный кабинет
+            <img src="images/icons/right_arrow.svg" alt="->">
+        </a>
+    </article> -->
+</body>
+</html>

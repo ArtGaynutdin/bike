@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | Вход</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Datepicker (Calendar) -->
+    <link rel="stylesheet" href="libraries/datepicker/datepicker.minimal.css">
+
+    <!-- CSS Normolise -->
+    <link rel="stylesheet" href="styles/total-clear.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="styles/general.css">
+    <!-- Header -->
+    <link rel="stylesheet" href="styles/header.css">
+    <!-- Footer -->
+    <link rel="stylesheet" href="styles/footer.css">
+
+    <!-- Registration -->
+    <link rel="stylesheet" href="styles/register/reg.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header">
+                <nav id="nav">
+                    <a href="/"><img id="header-logo" src="images/LogoGS.png" alt="Logo"></a>
+                    <a id="header-tel" href="tel:+998335005050">+998(33)-500-50-50</a>
+                    <a href="registration.html" id="login">Войти</a>
+                    <ul id="nav-menu">
+                        <li class="nav-link active"><a href="/">Аренда</a></li>
+                        <li class="nav-link"><a href="delivery.html">Доставка</a></li>
+                        <li class="nav-link"><a href="places.html">Где кататься</a></li>
+                        <li class="nav-link"><a href="contacts.html">Контакты</a></li>
+                        <li class="nav-link"><a href="about.html">О нас</a></li>
+                        <li class="nav-link tel hidden"><a href="tel:+998335005050">+998(33)-500-50-50</a></li>
+                        <li class="nav-link btn hidden"><a href="registration.html">Войти</a></li>
+                    </ul>
+                    <div id="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="margin_top">
+        <div class="container">
+            <div class="wrapper nopading">
+                <div class="reg_wrapper">
+                    <div class="reg_photo">
+                        <img src="images/reg_image_final.jpg" class="reg_photo_img" alt="bike">
+                    </div>
+                    <div class="forms_wrapper">
+                        <!-- Кнокпи табов -->
+                        <ul class="tabs">
+                            <li class="tab_btn">Вход</li>
+                            <li class="tab_btn active">Регистрация</li>
+                        </ul>
+                        <!-- Контент табов -->
+                        <ul class="tabs_wrapper">
+                            <!-- Вход -->
+                            <li class="tab_content">
+                                <form method="" action="" class="show_msg" id="login_form">
+                                    <p class="login_msg">Неверный логин или пароль!</p>
+                                    <div class="form-item">
+                                        <label class="form-label" for="login_phone">Номер телефона *</label>
+                                        <input type="text" class="reg-input login" id="login_phone" placeholder="XX-XXX-XX-XX">
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-label" for="login_pass">Пароль *</label>
+                                        <div class="password_wrapper">
+                                            <input type="password" class="reg-input password login" id="login_pass" placeholder="Введите пароль" minlength="6" maxlength="8">
+                                            <button type="button" class="show_hide_pass">
+                                                <img src="images/icons/hide_icon.svg" alt="hide">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <button type="submit" class="enter_btn disabled" id="login_button" disabled>Войти</button>
+                                    </div>
+                                </form>
+                            </li>
+                            <!-- Регистрация -->
+                            <li class="tab_content active">
+                                <form method="" action="" id="reg_form">
+                                    <div class="form-item">
+                                        <label class="form-label" for="user_name">Имя *</label>
+                                        <input type="text" class="reg-input reg" id="user_name" placeholder="Введите имя">
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-label warning" for="user_phone">
+                                            Пользователь с таким номером уже существует!
+                                        </label>
+                                        <input type="text" class="reg-input reg" id="user_phone" placeholder="XX-XXX-XX-XX">
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-label" for="user_pass">Пароль *</label>
+                                        <div class="password_wrapper">
+                                            <input type="password" class="reg-input password reg" id="user_pass" placeholder="Введите пароль" minlength="6" maxlength="8">
+                                            <button type="button" class="show_hide_pass">
+                                                <img src="images/icons/hide_icon.svg" alt="hide">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-item check">
+                                        <input type="checkbox" class="reg-input reg" id="user_check" value="">
+                                        <label class="form-label" for="user_check">Согласие на обработку персональных данных</label>
+                                    </div>
+                                    <div class="form-item">
+                                        <button type="submit" class="enter_btn disabled" id="reg_button" disabled>Зарегистрироваться</button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <img class="footer-logo" src="images/open-bike-logoGS.png" alt="LOGO">
+                <div class="contacts">
+                    <h3>Контакты:</h3>
+                    <ul>
+                        <li>100154,<br>Узбекстан, г.Ташкент</li>
+                        <li><a href="mailto:info@open-bike.uz">info@open-bike.uz</a></li>
+                        <li><a href="tel:+998335005050">+ 998(33)-500-50-50</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© OpenBike 2024</p>
+                <ul class="socials">
+                    <li><a href="#"><img src="images/icons/Telegram.svg" alt="Telegram"></a></li>
+                    <li><a href="#"><img src="images/icons/Instagram.svg" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="images/icons/VKontakte.svg" alt="VKontakte"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Бургер в шапке -->
+    <script src="scripts/header.js"></script>
+    <!-- Табы -->
+    <script src="scripts/tabs.js"></script>
+    <!-- Cleave -->
+    <script src="libraries/cleave/cleave.min.js"></script>
+
+    <!-- Валидация формы -->
+    <script src="scripts/register/validate-reg-forms.js"></script>
+</body>
+</html>

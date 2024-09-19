@@ -1,0 +1,119 @@
+/* --------------------- Вся оболочка для карточек --------------------- */
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    margin-top: 40px;
+}
+
+.bycicle {
+    /* width: 260px; */
+    min-height: 360px;
+    padding: 15px;
+
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.bycicle__info p:first-child {
+    font-weight: 700;
+}
+.bycicle__info p:last-child {
+    text-transform: uppercase;
+}
+.bycicle__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    color: var(--grey_text);
+}
+
+.bycicle__photo {
+    /* width: 230px; */
+    width: 100%;
+    padding: 10px;
+    min-height: 230px;
+    margin: 15px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background);
+    border-radius: 10px;
+}
+.bycicle__photo img {
+    width: 85%;
+}
+
+.bycicle__title {
+    color: var(--main_text);
+    margin-bottom: 10px;
+}
+
+.bycicle__price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.bycicle__to-cart {
+    width: 210px;
+    height: 40px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s linear;
+
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green);
+    background-color: #fff;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+}
+.bycicle__to-cart:hover {
+    box-shadow: 0px 0px 10px 0px #28B737 inset;
+}
+.bycicle__to-cart.checked {
+    color: #fff;
+    background-color: var(--green);
+}
+
+
+/* 992px - 1200px */
+@media screen and (max-width: 1280px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        /* gap: 20px; */
+    }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    /* .cards {
+        grid-template-columns: repeat();
+    } */
+}
