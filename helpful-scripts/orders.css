@@ -1,0 +1,384 @@
+.order {
+    padding-block: 30px;
+    border-bottom: 2px dashed var(--main_text);
+}
+.order:first-child {
+    padding-top: 0;
+}
+
+.order_header {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 15px;
+
+    /* padding-bottom: 20px; */
+}
+.header_item.text, .info_item.text, .final_title {
+    font-size: 16px;
+    color: var(--grey_text);
+}
+.header_item.value {
+    font-weight: 600;
+    color: var(--main_text);
+    display: flex;
+    align-items: end;
+}
+.header_item.text.number, .header_item.value.number {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.header_item.text.date, .header_item.value.date {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.header_item.text.payment, .header_item.value.payment {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.header_item.text.status, .header_item.value.status {
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.header_item.detail_btn {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 6;
+
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.show_hide_details_btn {
+    display: block;
+    padding: 7px 30px 7px 7px;
+
+    font-size: 18px;
+    color: var(--green);
+    background-color: var(--background);
+    border: 2px solid var(--green);
+    border-radius: 10px;
+
+    /* position: relative; */
+}
+.details_btn_inner {
+    display: inline;
+    position: relative;
+}
+.details_btn_inner::before {
+    content: url(../../images/icons/drop_arrow_green.svg);
+    position: absolute;
+    right: -18px;
+    top: 3px;
+    transform: rotate(180deg);
+    
+    transition: 0.2s;
+    pointer-events: none;
+}
+.show_hide_details_btn.active .details_btn_inner::before {
+    top: -3px;
+    transform: rotate(0deg);
+}
+
+/* .header_item.value.number
+.header_item.value.date
+.header_item.value.payment
+.header_item.value.status */
+
+
+.status_value, .payment_value {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+.status_value.red, .payment_value.red {
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+.status_value.yellow {
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+}
+.status_value.green, .payment_value.green {
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+
+.table_info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+    text-align: center;
+
+    padding-top: 20px;
+    padding-block: 30px;
+    border-bottom: 2px dashed var(--grey_text);
+}
+
+
+.final_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.final_item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.total_sum {
+    text-align: center;
+}
+
+.total_sum {
+    font-weight: 700;
+    color: var(--green);
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: var(--light-green-2);
+    display: inline;
+    font-size: 19px;
+}
+
+
+.buttons_wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+}
+.order_button {
+    width: 260px;
+    height: 60px;
+
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+
+    transition: all 0.1s ease-out;
+}
+.order_button:hover {
+    font-size: 21px;
+    font-weight: 700;
+}
+.order_button.to_pay {
+    background-color: var(--green);
+    color: #fff;
+}
+.order_button.to_pay:hover {
+    box-shadow: inset 0 0 15px 0 #fff;
+}
+.order_button.to_cancel {
+    background-color: var(--background);
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+.order_button.to_cancel:hover {
+    box-shadow: inset 0 0 15px 0 var(--green);
+}
+
+.details {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.3s ease-out, margin-top 0.3s ease-out;
+}
+.details.open {
+    grid-template-rows: 1fr;
+    margin-top: 30px;
+}
+.details_inner {
+    min-height: 0;
+}
+
+
+/* 992px - 1200px */
+@media screen and (max-width: 1200px) {
+    .order_header {
+        grid-template-columns: 1.2fr 1fr 1.5fr 1.5fr 1fr;
+    }
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+    .order {
+        padding-bottom: 20px;
+    }
+    .order_header {
+        grid-template-rows: 0.1fr 0.5fr 1fr;
+        grid-template-columns: 1.2fr 1fr 1.5fr 1.5fr;
+    }
+    .header_item.detail_btn {
+        grid-row-start: 3;
+        grid-row-end: unset;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        margin-top: 10px;
+
+        justify-content: start;
+    }    
+    .buttons_wrapper {
+        justify-content: center;
+    }
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+    /* Основная инфа */
+    .order_header {
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.5fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header_item.text.number, .header_item.text.date {
+        grid-row-start: 1;
+    }
+    .header_item.value.number, .header_item.value.date {
+        grid-row-start: 2;
+    }
+    .header_item.text.number, .header_item.value.number {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .header_item.text.date, .header_item.value.date {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .header_item.text.payment, .header_item.text.status {
+        grid-row-start: 3;
+    }
+    .header_item.value.payment, .header_item.value.status {
+        grid-row-start: 4;
+    }
+    .header_item.text.payment, .header_item.value.payment {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .header_item.text.status, .header_item.value.status {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .header_item.detail_btn {
+        grid-row-start: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        justify-content: start;
+    }
+    .show_hide_details_btn {
+        width: 100%;
+    }
+
+    .table_info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .info_item.text.type, .info_item.text.info {
+        grid-row-start: 1;
+    }
+    .info_item.value.type, .info_item.value.info {
+        grid-row-start: 2;
+    }
+    .info_item.text.par_1, .info_item.text.par_2 {
+        margin-top: 10px;
+    }
+
+    .order_button {
+        width: 100%;
+    }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+    /* Основная инфа */
+    .order {
+        padding-top: 40px;
+    }
+    .order_header {
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.1fr 0.5fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    .header_item.text.number {
+        grid-row-start: 1;
+    }
+    .header_item.value.number {
+        grid-row-start: 2;
+    }
+    .header_item.text.date {
+        grid-row-start: 3;
+    }
+    .header_item.value.date {
+        grid-row-start: 4;
+    }
+    .header_item.text.payment {
+        grid-row-start: 5;
+    }
+    .header_item.value.payment {
+        grid-row-start: 6;
+    }
+    .header_item.text.status {
+        grid-row-start: 7;
+    }
+    .header_item.value.status {
+        grid-row-start: 8;
+    }
+    .header_item.detail_btn {
+        grid-row-start: 9;
+    }
+    .header_item.text.number, .header_item.value.number,
+    .header_item.text.date, .header_item.value.date,
+    .header_item.text.payment, .header_item.value.payment,
+    .header_item.text.status, .header_item.value.status,
+    .header_item.detail_btn {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+
+    .table_info {
+        grid-template-columns: 1fr;
+    }
+    .info_item.text.type {
+        grid-row-start: 1;
+    }
+    .info_item.value.type {
+        grid-row-start: 2;
+    }
+    .info_item.text.par_1 {
+        grid-row-start: 3;
+    }
+    .info_item.value.par_1 {
+        grid-row-start: 4;
+    }
+    .info_item.text.par_2 {
+        grid-row-start: 5;
+    }
+    .info_item.value.par_2 {
+        grid-row-start: 6;
+    }
+    .info_item.text.info {
+        grid-row-start: 7;
+    }
+    .info_item.value.info {
+        grid-row-start: 8;
+    }
+    .info_item.text.par_1, .info_item.text.par_2, .info_item.text.info {
+        margin-top: 15px;
+    }
+
+    .final_info {
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .buttons_wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
